@@ -29,6 +29,17 @@ body{
     background-color: #ffffff;
     line-height: 1.5;
 }
+body.dark{
+    background-color: var(--bg-dark);
+    --black-100:var(--bg-dark); 
+    --black-000:var(--bg-dark); 
+    --main-to-dark-color: var(--bg-dark);
+    --dark-to-main-color: var(--main-color) ; 
+    --shadow-black-100: var(--shadow-black-300); 
+    --black-alpha-100: rgba(255,255,255,0.05); 
+    --black-900:#ffffff; 
+    --black-400:#bbbbbb; 
+}
 *{
     margin: 0;
     padding: 0;
@@ -113,6 +124,27 @@ ul{
     }
 
 }
+@keyframes zoomInOut_01{
+    /* 0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    } */
+    25%{
+        color: #09d69d;
+    }
+    50%{
+        color: #f5ae10;
+    }
+    75%{
+        color: #e91e63;
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
 .effect-wrap .effect{
     position: absolute;
     z-index:-1; 
@@ -172,6 +204,39 @@ ul{
 .owl-carousel button.owl-dot.active{
     background-color: var(--main-color);
 }
+/*------------------------
+Preloader
+------------------------*/
+.preloader{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2100;
+    background-color: var(--main-to-dark-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+   
+.preloader span{
+    /* display: block;
+    height: 60px;
+    width: 60px;
+    background-color: var(--dark-to-main-color);
+    border-radius: 50%;
+    animation: zoomInOut_01 1s ease infinite; */
+    width: 50px;
+    height: 50px;
+    border: 5px solid;
+    color: #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation:zoomInOut_01 0.2s ease infinite;
+}
+
+
 
 /* --------------
 Nav-Bar
@@ -189,7 +254,7 @@ Nav-Bar
 
 .navbar .navbar-brand{
     font-size: 30px;
-    color: var(--black-000);
+    color: var(--black-900);
     font-weight: 500;
     text-transform: capitalize;
 }
@@ -954,4 +1019,110 @@ Footer Section
     font-weight: 300;
     margin: 50px 0 0;
     border-top:1px solid rgba(255, 255, 255, 0.2);
+}
+
+/*-----------------------------
+Toggle theme light and dark mode 
+----------------------------------*/
+.toggle-theme{
+    position: fixed;
+    right: 0;
+    top: calc(50% - 20px);
+    height: 40px;
+    width: 40px;
+    background-color: var(--dark-to-main-color);
+    z-index: 1200;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: var(--shadow-black-300);
+}
+.toggle-theme i{
+    line-height: 40px;
+}
+
+/*-------------------
+Reponsive
+ -------------------*/
+
+ @media(max-width: 991px){
+     .navbar-toggler{
+         background-color: var(--dark-to-main-color);
+         box-shadow: var(--shadow-black-300);
+         height: 34px;
+         width: 44px;
+         padding: 0;
+         font-size: 17px;
+         color: #ffffff;
+     }
+     .navbar-nav{
+         background-color: var(--dark-to-main-color);
+         box-shadow: var(--shadow-black-300);
+     }
+     .navbar .nav-item{
+         margin: 0;
+         padding: 5px 15px;
+     }
+     .navbar.navbar-shrink .navbar-toggler,
+     .navbar.navbar.navbar-shrink .navbar-nav{
+        background-color: var(--main-color);
+     }
+     .home-img .circle{
+         height: 320px;
+         height: 320px;
+     }
+     .home-img .circle::before{
+         left: 18px;
+         top: 18px;
+         transform-origin: 142px 142px;
+     }
+     .home-text h1{
+         font-size: 40px;
+     }
+     .pricing-plan,
+     .how-it-work-item,
+     .app-download-item{
+         margin-bottom: 30px;
+     }
+     .how-it-work-item.line-right::before{
+         content: none;
+     }
+     .how-it-work-item{
+         box-shadow: var(--shadow-black-100);
+         border-radius: 10px;
+     }
+     .footer-col{
+        margin-bottom: 30px;
+    }
+ }  
+
+ @media(max-width: 767px){
+     .home-text{
+         margin-bottom: 80px;
+     }
+     .fun-fact-img{
+         margin-bottom: 30px;
+     }
+     .contact-form{
+         margin-top: 20px;
+     }
+     .section-title h2{
+         font-size: 35px;
+     }
+     .fun-facts .section-title h2{
+         text-align: center;
+     }
+ }
+ @media(max-width: 575px){
+    .home-text h1{
+        font-size: 30px;
+    }
+    .home-text p{
+        font-size: 16px;
+    }
+    .section-title h2{
+        font-size: 30px;
+    }
 }

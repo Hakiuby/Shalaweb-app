@@ -25,6 +25,14 @@
 </head>
 
 <body>
+    <!---------Preloader Start-------->
+    <div class="preloader">
+        <span></span>
+    </div>
+
+    <!---------Preloader End-------->
+
+
     <!-- Navbar start  -->
     <nav class="navbar navbar-expand-lg fixed-top ">
         <div class="container">
@@ -38,33 +46,33 @@
                 aria-controls="navbarSupportedContent" 
                 aria-expanded="false" 
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <i class="fas fa-bars"></i>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav  ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link active__home" href="#">Home</a>
+                        <a class="nav-link active__home" data-scroll-nav="0" href="#">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" data-scroll-nav="1" href="#">Features</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Screenshoots</a>
+                        <a class="nav-link" data-scroll-nav="2" href="#">Screenshoots</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tesimonials</a>
+                        <a class="nav-link" data-scroll-nav="3" href="#">Tesimonials</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" data-scroll-nav="4" href="#">Pricing</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" data-scroll-nav="5" href="#">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -74,7 +82,7 @@
 
 
     <!-- Home Section Start  -->
-    <section class="home d-flex align-items-center">
+    <section class="home d-flex align-items-center" id="home" data-scroll-index="0">
         <div class="effect-wrap">
             <i class="fas fa-plus effect effect-1"></i>
             <i class="fas fa-plus effect effect-2"></i>
@@ -82,12 +90,12 @@
         </div>
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-7 col-md-7">
+                <div class="col-md-7">
                     <div class="home-text">
                         <h1>Best Mobile App Teamplate for your Business.</h1>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis in illum sit eius laboriosam adipisci. Soluta harum porro unde?</p>
                         <div class="home-btn">
-                            <a href="#" class="btn btn-1">Download App</a>
+                            <a href="#" data-scroll-goto="3" class="btn btn-1">Download App</a>
                             <button type="button" class="btn btn-1 video-play-btn">
                                 <i class="fas fa-play"></i>
                             </button>
@@ -95,7 +103,7 @@
 
                     </div>
                 </div>
-                <div class="col-lg-5 col-md-5 text-center">
+                <div class="col-md-5 text-center">
                     <div class="home-img">
                         <img src="img/app-screenshots/1.png" alt="shala app">
                         <div class="circle">
@@ -111,7 +119,7 @@
     <!-- Home Section End -->
 
     <!-----Featrure Section Start -------->
-    <section class="features section-padding">
+    <section class="features section-padding" id="features" data-scroll-index="1">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 ">
@@ -205,7 +213,7 @@
      <!----Fun Facts Section End--------->
 
      <!-------App Screen Section Start-------->
-    <section class="app-screenshots section-padding">
+    <section class="app-screenshots section-padding" id="screenshots" data-scroll-index="2">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -243,7 +251,7 @@
       <!-------App Screen Section End-------->
 
       <!------- App Download Section Strat---------->
-    <section class="app-download section-padding">
+    <section class="app-download section-padding" data-scroll-index="3">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -332,7 +340,7 @@
        <!--------It Works Section End----------->
 
     <!---------Testimonials Section Start-->
-    <section class="testimonials section-padding">
+    <section class="testimonials section-padding" id="testimonials" data-scroll-index="4">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -417,7 +425,7 @@
     <!---------Testimonials Section End-->
 
     <!--------- Pricing Plan Section Start ---------------->
-    <section class="pricing section-padding">
+    <section class="pricing section-padding" id="pricing" data-scroll-index="5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -426,7 +434,7 @@
                     </div>
                 </div>
             </div>
-            .<div class="row">
+            .<div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6">
                     <div class="pricing-plan">
                         <div class="pricing-header">
@@ -630,7 +638,7 @@
     <!---------Faq Section End ------------------->
 
     <!--------- Contact Section Strart------------>
-    <section class="contact section-padding">
+    <section class="contact section-padding" data-scroll-index="6">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -737,11 +745,11 @@
                     <div class="footer-col">
                         <h3>Quick Links</h3>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Screenshoots</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#screenshots">Screenshoots</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
                         </ul>
                     </div>
                 </div>
@@ -762,11 +770,18 @@
                     <p class="copyright-text">
                         &copy;2021 @ PhanVietHa
                     </p>
+                    
                 </div>
             </div>
         </div>
     </footer>
     <!---------- Footer Section End ---------------->
+
+    <!---------- Toggle Theme Start light and dark mode ---------------->
+    <div class="toggle-theme">
+        <i class="fas"></i>
+    </div>
+      <!---------- Toggle Theme End ---------------->
 
 
 
@@ -795,6 +810,8 @@
     <!-- <script src="JS/jquery.min.js"></script> -->
     <!-- popper JS -->
     <script src="JS/popper.min.js"></script>
+    <!-- scrollit JS -->
+    <script src="JS/scrollIt.min.js"></script>
     <!-- main JS -->
     <script src="JS/main.js"></script>
 </body>
